@@ -1,0 +1,32 @@
+.containerMovie {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.col {
+    max-width: 400px;
+    margin: 15px;
+    height: auto;
+    width: 80%;
+}
+
+.imgDetailMovie {
+    border-radius: 15px;
+}
+
+.detailMovie {
+    font-size: x-large;
+}
+
+.titleMovie {
+    font-size: xx-large;
+    margin: 0 0 20px;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.paragraph {
+    margin: 10px 0;
+    text-align: justify;
+}
