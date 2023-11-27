@@ -13,6 +13,7 @@ export function DetailMovie() {
         httpApi("/movie/" + idMovie).then((data) => {
             setMovie(data);
             setGenders(data.genres[0]);
+            console.log(data);
         });
     }, [idMovie]);
 
@@ -33,4 +34,3 @@ export function DetailMovie() {
         </div>
     );
 }
-//https://www.youtube.com/watch?v=5iiF_hxhLB4
