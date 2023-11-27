@@ -10,7 +10,7 @@ export class CardMovie extends Component {
 
         return (
             <li className="cardMovie">
-                <Link to={"/movie/" + id} className="linkable">
+                <Link to={"/movie/" + id + "/videos"} className="linkable">
                     <img
                         width={230}
                         height={345}
