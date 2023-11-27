@@ -1,15 +1,14 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
-import { AppRouter } from "./router/appRouter";
+import {MyRoutes} from './routes/Routes.jsx';
+import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
-      <AppRouter />
+        <header>
+            <h2 className='title'>📺</h2>
+            <h2 className='title'>Películas Chigüiro</h2>
+        </header>
+        <MyRoutes />
     </>
   );
 }

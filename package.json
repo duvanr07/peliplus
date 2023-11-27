@@ -1,5 +1,5 @@
 {
-  "name": "peliplus",
+  "name": "reactjs",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,8 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@ant-design/icons": "^5.2.6",
-    "antd": "^5.11.4",
+    "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.20.0"
