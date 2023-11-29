@@ -7,6 +7,9 @@ export const config = {
     },
     movie: {
       detail: "/movie/${id}",
+      keywords: "/movie/${id}/keywords",
+      videos: "/movie/${id}/videos",
+      credits: "/movie/${id}/credits",
     },
   },
 };

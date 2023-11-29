@@ -4,23 +4,29 @@ import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import {
   applyMiddleware,
-  legacy_createStore as createStore,
   compose,
+  legacy_createStore as createStore,
+  combineReducers,
 } from "redux";
-import thunkMiddleware from "redux-thunk";
 import promise from "redux-promise-middleware";
+import thunkMiddleware from "redux-thunk";
 import { logger } from "./middlewares/";
 
 import App from "./App.jsx";
 import "./index.css";
-import { moviesReducer } from "./redux/reducers/movies.reducer.js";
+
+import * as reducers from "./redux/reducers/index.js";
 
 const composeAlt = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const middlewareEnhancer = applyMiddleware(logger, thunkMiddleware, promise);
 const composedEnhancers = composeAlt(middlewareEnhancer);
 
-const store = createStore(moviesReducer, composedEnhancers);
+const rootReducer = (state, action) => {
+  return combineReducers(reducers)(state, action);
+};
+
+const store = createStore(rootReducer, composedEnhancers);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <BrowserRouter>

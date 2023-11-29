@@ -1,13 +1,13 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { GET_DISCOVER, GET_NOW_PLAYING } from "../redux/actions";
+import { GET_DISCOVER } from "../redux/actions";
 import { CardMovie } from "./CardMovie";
 import "./ContentCardMovie.css";
 export const ContentCardMovie = () => {
   const dispatch = useDispatch();
   useEffect(() => dispatch(GET_DISCOVER()), []);
 
-  const movies = useSelector((state) => state.discover);
+  const movies = useSelector((state) => state.movies.discover);
 
   return (
     <ul className="container">

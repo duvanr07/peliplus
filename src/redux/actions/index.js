@@ -22,3 +22,23 @@ export const GET_DISCOVER = () => (dispatch) => {
     payload: request(config, OPTIONS_HTTP.GET, "movies.discover"),
   });
 };
+
+export const GET_KEYWORDS = (params) => (dispatch) => {
+  dispatch({
+    type: MOVIES_TYPE.KEYWORDS,
+    payload: request(config, OPTIONS_HTTP.GET, "movie.keywords", params),
+  });
+};
+
+export const GET_VIDEOS = (params) => (dispatch) => {
+  dispatch({
+    type: MOVIES_TYPE.VIDEOS,
+    payload: request(config, OPTIONS_HTTP.GET, "movie.videos", params),
+  });
+};
+export const GET_CREDITS = (params) => (dispatch) => {
+  dispatch({
+    type: MOVIES_TYPE.CREDITS,
+    payload: request(config, OPTIONS_HTTP.GET, "movie.credits", params),
+  });
+};

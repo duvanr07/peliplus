@@ -3,9 +3,9 @@ import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import "./DetailMovie.css";
 
-import { GET_DETAIL } from "../redux/actions";
 import { imgMovie } from "../utils/imgMovie";
 import { Spin } from "antd";
+import { GET_DETAIL } from "../redux/actions";
 
 export const DetailMovie = () => {
   const { idMovie } = useParams();
@@ -14,7 +14,7 @@ export const DetailMovie = () => {
 
   useEffect(() => dispatch(GET_DETAIL({ id: idMovie })), []);
   const movie = useSelector((state) => state.detailMovie);
-  const isLoading = useSelector((state) => state.loadingDetail);
+  const isLoading = useSelector((state) => state.detailMovie.loading);
   console.log(isLoading);
 
   const imgUrl = imgMovie(movie.poster_path, 500, isLoading);
