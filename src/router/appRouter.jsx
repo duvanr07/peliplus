@@ -1,15 +1,16 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import { About } from "../pages/about";
 
+import { Home } from "../pages/Home";
+import { DetailMovie } from "../pages/DetailMovie";
 
 export const AppRouter = () => {
   return (
-    <div>
+    <>
       <Routes>
         <Route path="/" element={<Home />}></Route>
-        <Route path="/about" element={<About />}></Route>
+        <Route exact path="/movie/:idMovie" element={<DetailMovie />} />
       </Routes>
-    </div>
+    </>
   );
 };

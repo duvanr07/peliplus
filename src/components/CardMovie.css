@@ -1,0 +1,28 @@
+.cardMovie {
+  font-size: x-large;
+  list-style: none;
+  text-align: center;
+  transition: 0.5s;
+}
+
+.cardMovie:hover {
+  opacity: 0.5;
+  transform: translateY(-30px);
+  transition: 0.5s;
+}
+
+.linkable {
+  color: black;
+  text-decoration: none;
+}
+
+.imgMovie {
+  border-radius: 15px;
+}
+
+@media (max-width: 560px) {
+  .imgMovie {
+    height: auto;
+    width: 90%;
+  }
+}
