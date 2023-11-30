@@ -5,7 +5,7 @@ import "./DetailMovie.css";
 
 import { imgMovie } from "../utils/imgMovie";
 import { Spin } from "antd";
-import { GET_DETAIL, GET_KEYWORDS, GET_VIDEOS } from "../redux/actions";
+import {GET_CREDITS, GET_DETAIL, GET_KEYWORDS, GET_VIDEOS} from "../redux/actions";
 
 export const DetailMovie = () => {
   const { idMovie } = useParams();
@@ -16,10 +16,12 @@ export const DetailMovie = () => {
     dispatch(GET_DETAIL({ id: idMovie }));
     dispatch(GET_VIDEOS({ id: idMovie }));
     dispatch(GET_KEYWORDS({ id: idMovie }));
+    dispatch(GET_CREDITS({ id: idMovie }));
   }, []);
 
   const movie = useSelector((state) => state.detailMovie);
   const keywords = useSelector((state) => state.detailMovie.keywords);
+  const characters = useSelector((state) => state.detailMovie.credits)
   const isLoading = useSelector((state) => state.detailMovie.loading);
 
   const imgUrl = imgMovie(movie.poster_path, 500, isLoading);
@@ -42,7 +44,15 @@ export const DetailMovie = () => {
         <h1>Keywords</h1>
 
         {keywords.map(({ name }) => (
-          <span class="badge bg-info m-1">{name}</span> 
+          <span key={name} className="badge bg-info m-1">{name}</span>
+        ))}
+
+        <h2>Actores</h2>
+        {characters.map(({ profile_path, character }) => (
+            <div>
+              <img src={'https://image.tmdb.org/t/p/w300' + profile_path} alt=""/>
+              <span key={character} className="badge bg-info m-1">{character}</span>
+            </div>
         ))}
       </div>
     </div>
