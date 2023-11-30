@@ -19,7 +19,11 @@ export const CardMovie = (props) => {
           alt={title}
           className="imgMovie"
         />
-        <div>{title}</div>
+        <div>
+          <Link to={"/movie/" + id + "/videos"} className="linkable">
+            {title}
+          </Link>
+        </div>
       </Link>
     </li>
   );

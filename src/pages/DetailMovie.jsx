@@ -5,17 +5,22 @@ import "./DetailMovie.css";
 
 import { imgMovie } from "../utils/imgMovie";
 import { Spin } from "antd";
-import { GET_DETAIL } from "../redux/actions";
+import { GET_DETAIL, GET_KEYWORDS, GET_VIDEOS } from "../redux/actions";
 
 export const DetailMovie = () => {
   const { idMovie } = useParams();
 
   const dispatch = useDispatch();
 
-  useEffect(() => dispatch(GET_DETAIL({ id: idMovie })), []);
+  useEffect(() => {
+    dispatch(GET_DETAIL({ id: idMovie }));
+    dispatch(GET_VIDEOS({ id: idMovie }));
+    dispatch(GET_KEYWORDS({ id: idMovie }));
+  }, []);
+
   const movie = useSelector((state) => state.detailMovie);
+  const keywords = useSelector((state) => state.detailMovie.keywords);
   const isLoading = useSelector((state) => state.detailMovie.loading);
-  console.log(isLoading);
 
   const imgUrl = imgMovie(movie.poster_path, 500, isLoading);
 
@@ -34,6 +39,11 @@ export const DetailMovie = () => {
         <p className="paragraph">
           <strong>Resumen: </strong> {movie.overview}
         </p>
+        <h1>Keywords</h1>
+
+        {keywords.map(({ name }) => (
+          <span class="badge bg-info m-1">{name}</span> 
+        ))}
       </div>
     </div>
   );

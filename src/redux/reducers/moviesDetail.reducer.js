@@ -49,7 +49,7 @@ const movieDetailReducer = (state = initialState, action) => {
     case `${MOVIES_TYPE.VIDEOS}_FULFILLED`:
       return {
         ...state,
-        keywords: action.payload.data.results,
+        videos: action.payload.data.results,
         loadingVideos: false,
       };
 
