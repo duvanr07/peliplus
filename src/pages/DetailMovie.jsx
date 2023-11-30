@@ -4,7 +4,6 @@ import { useParams } from "react-router-dom";
 import "./DetailMovie.css";
 
 import { imgMovie } from "../utils/imgMovie";
-import { Spin } from "antd";
 import {GET_CREDITS, GET_DETAIL, GET_KEYWORDS, GET_VIDEOS} from "../redux/actions";
 
 export const DetailMovie = () => {

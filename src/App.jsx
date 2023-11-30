@@ -1,4 +1,3 @@
-import { useDispatch, useSelector } from "react-redux";
 import "./App.css";
 import { AppRouter } from "./router/appRouter.jsx";
 
