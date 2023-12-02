@@ -5,4 +5,5 @@ export const MOVIES_TYPE = {
   KEYWORDS: "KEYWORDS",
   VIDEOS: "VIDEOS",
   CREDITS: "CREDITS",
+  SEARCH: "SEARCH",
 };

@@ -9,6 +9,14 @@ export const GET_NOW_PLAYING = () => (dispatch) => {
     payload: request(config, OPTIONS_HTTP.GET, "movies.nowPlaying"),
   });
 };
+
+export const SEARCH_MOVIES = (params) => (dispatch) => {
+  dispatch({
+    type: MOVIES_TYPE.SEARCH,
+    payload: request(config, OPTIONS_HTTP.GET, "movies.search", params),
+  });
+};
+
 export const GET_DETAIL = (params) => (dispatch) => {
   dispatch({
     type: MOVIES_TYPE.DETAIL,

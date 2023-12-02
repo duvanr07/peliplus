@@ -20,6 +20,12 @@ const moviesReducer = (state = initialState, action) => {
         discover: action.payload.data.results,
       };
 
+    case `${MOVIES_TYPE.SEARCH}_FULFILLED`:
+      return {
+        ...state,
+        discover: action.payload.data.results,
+      };
+
     default:
       return state;
   }

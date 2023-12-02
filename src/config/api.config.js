@@ -4,6 +4,7 @@ export const config = {
     movies: {
       nowPlaying: "/movie/now_playing",
       discover: "/discover/movie",
+      search: "/search/movie",
     },
     movie: {
       detail: "/movie/${id}",

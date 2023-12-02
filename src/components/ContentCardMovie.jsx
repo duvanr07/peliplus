@@ -5,9 +5,9 @@ import { CardMovie } from "./CardMovie";
 import "./ContentCardMovie.css";
 export const ContentCardMovie = () => {
   const dispatch = useDispatch();
+  const movies = useSelector((state) => state.movies.discover);
   useEffect(() => dispatch(GET_DISCOVER()), []);
 
-  const movies = useSelector((state) => state.movies.discover);
 
   return (
     <ul className="container">

@@ -17,12 +17,14 @@ export const CardMovie = (props) => {
           height={345}
           src={imgUrl}
           alt={title}
+          title={title}
           className="imgMovie"
         />
         <div>
-          <Link to={"/movie/" + id + "/videos"} className="linkable">
+
+          {/* <Link to={"/movie/" + id + "/videos"} className="linkable">
             {title}
-          </Link>
+          </Link> */}
         </div>
       </Link>
     </li>
