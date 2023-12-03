@@ -31,6 +31,27 @@ export const GET_DISCOVER = () => (dispatch) => {
   });
 };
 
+export const GET_POPULAR = () => (dispatch) => {
+  dispatch({
+    type: MOVIES_TYPE.POPULAR,
+    payload: request(config, OPTIONS_HTTP.GET, "movies.popular"),
+  });
+};
+
+export const GET_UPCOMING = () => (dispatch) => {
+  dispatch({
+    type: MOVIES_TYPE.UPCOMING,
+    payload: request(config, OPTIONS_HTTP.GET, "movies.upcoming"),
+  });
+};
+
+export const GET_PEOPLES = () => (dispatch) => {
+  dispatch({
+    type: MOVIES_TYPE.PEOPLES,
+    payload: request(config, OPTIONS_HTTP.GET, "peoples.popularList"),
+  });
+};
+
 export const GET_KEYWORDS = (params) => (dispatch) => {
   dispatch({
     type: MOVIES_TYPE.KEYWORDS,

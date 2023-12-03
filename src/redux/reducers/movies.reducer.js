@@ -4,6 +4,10 @@ const initialState = {
   loading: false,
   nowPlaying: [],
   discover: [],
+  search: [],
+  popular: [],
+  upcoming: [],
+  peoples: [],
 };
 
 const moviesReducer = (state = initialState, action) => {
@@ -19,11 +23,27 @@ const moviesReducer = (state = initialState, action) => {
         ...state,
         discover: action.payload.data.results,
       };
+    case `${MOVIES_TYPE.POPULAR}_FULFILLED`:
+      return {
+        ...state,
+        popular: action.payload.data.results,
+      };
+    case `${MOVIES_TYPE.UPCOMING}_FULFILLED`:
+      return {
+        ...state,
+        upcoming: action.payload.data.results,
+      };
+
+    case `${MOVIES_TYPE.PEOPLES}_FULFILLED`:
+      return {
+        ...state,
+        peoples: action.payload.data.results,
+      };
 
     case `${MOVIES_TYPE.SEARCH}_FULFILLED`:
       return {
         ...state,
-        discover: action.payload.data.results,
+        search: action.payload.data.results,
       };
 
     default:
