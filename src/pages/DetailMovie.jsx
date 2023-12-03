@@ -1,14 +1,15 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useParams } from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 import "./DetailMovie.css";
 
 import { imgMovie } from "../utils/imgMovie";
 import {GET_CREDITS, GET_DETAIL, GET_KEYWORDS, GET_VIDEOS} from "../redux/actions";
+import {isEmpty} from "lodash";
+import {TrailerMovie} from "./TrailerMovie.jsx";
 
 export const DetailMovie = () => {
   const { idMovie } = useParams();
-
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -26,34 +27,53 @@ export const DetailMovie = () => {
   const imgUrl = imgMovie(movie.poster_path, 500, isLoading);
 
   return (
-    <div className="containerMovie">
-      {/* {isLoading && <Spin />} */}
+      <>
+        {/* {isLoading && <Spin />} */}
 
-      <img src={imgUrl} alt={movie.title} className="col imgDetailMovie" />
-      <div className="col detailMovie">
-        <p className="titleMovie">
-          <strong>Título: </strong> {movie.title}
-        </p>
-        {/* <p className="paragraph">
-          <strong>Género: </strong> {genders.name}
-        </p> */}
-        <p className="paragraph">
-          <strong>Resumen: </strong> {movie.overview}
-        </p>
-        <h1>Keywords</h1>
+        <div className="container containerMovie d-flex flex-wrap justify-content-center">
+          <img src={imgUrl} alt={movie.title} className="imgDetailMovie" />
 
-        {keywords.map(({ name }) => (
-          <span key={name} className="badge bg-info m-1">{name}</span>
-        ))}
+          <div className="detailMovie">
+            <p className="titleMovie">
+              <strong>Título: </strong> {movie.title}
+            </p>
 
-        <h2>Actores</h2>
-        {characters.map(({ profile_path, character }) => (
-            <div>
-              <img src={'https://image.tmdb.org/t/p/w300' + profile_path} alt=""/>
-              <span key={character} className="badge bg-info m-1">{character}</span>
-            </div>
-        ))}
-      </div>
-    </div>
-  );
+            <p className="paragraph">
+              <strong>Resumen</strong><br/>
+              {movie.overview}
+            </p>
+
+            <p className="paragraph">
+              <strong>Keywords</strong><br/>
+              {keywords.map(({ name }) => (
+                  <span key={name} className="badge bg-info mx-1">{name}</span>
+              ))}
+            </p>
+
+            <p className="paragraph">
+              <strong>Trailer</strong><br/>
+              <Link to={"/movie/" + movie.id + "/videos"} className="linkable">Ver Trailers</Link>
+            </p>
+          </div>
+        </div>
+
+        <div className="container">
+          <h2 className="actorsTitle">Actores</h2>
+
+          <div className="actorsMovie mt-4">
+            {characters.map(({ profile_path, character }) => (
+                <div className="cardActors">
+                  <img
+                      src={'https://image.tmdb.org/t/p/w300' + profile_path}
+                      alt=""
+                      title={character}
+                      className="imgActors"
+                  /><br/>
+                  <span key={character} className="txtActors">{character}</span>
+                </div>
+            ))}
+          </div>
+        </div>
+      </>
+  )
 };

@@ -10,7 +10,7 @@ export const NowPlaying = () => {
   useEffect(() => dispatch(GET_NOW_PLAYING()), []);
 
   return (
-    <div className="container">
+    <div className="container contentMovie">
       {movies.map((movie) => (
         <CardMovie key={movie.id} movie={movie} />
       ))}

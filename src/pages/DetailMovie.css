@@ -1,32 +1,77 @@
 .containerMovie {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.col {
-  max-width: 400px;
-  margin: 15px;
-  height: auto;
-  width: 80%;
+  margin: 15px auto auto;
 }
 
 .imgDetailMovie {
   border-radius: 15px;
+  box-shadow: 10px 10px 10px;
+  width: 235px;
 }
 
 .detailMovie {
   font-size: x-large;
+  margin-left: 30px;
+  width: 75%;
 }
 
 .titleMovie {
-  font-size: xx-large;
   margin: 0 0 20px;
-  text-align: center;
-  text-decoration: underline;
 }
 
 .paragraph {
+  font-size: medium;
   margin: 10px 0;
   text-align: justify;
+}
+
+.actorsTitle {
+  text-align: center;
+}
+
+.actorsMovie {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: auto;
+}
+
+.cardActors {
+  margin: 0 10px;
+  text-align: center;
+  width: 100px;
+}
+
+.imgActors {
+  border-radius: 10px;
+  height: auto;
+  width: 100px;
+}
+
+.txtActors {
+  font-size: 10px;
+}
+
+.cardTrailer {
+  margin-bottom: 10px;
+  width: 550px;
+}
+
+@media (max-width: 560px) {
+  .imgDetailMovie {
+    margin-bottom: 20px;
+    width: 90%;
+  }
+
+  .detailMovie {
+    margin: 0 20px;
+    width: 90%;
+  }
+
+  .titleMovie {
+    text-align: center;
+  }
+
+  .actorsMovie {
+    width: 90%;
+  }
 }

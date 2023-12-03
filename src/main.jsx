@@ -13,7 +13,6 @@ import thunkMiddleware from "redux-thunk";
 import { logger } from "./middlewares/";
 
 import App from "./App.jsx";
-import "./index.css";
 
 import * as reducers from "./redux/reducers/index.js";
 

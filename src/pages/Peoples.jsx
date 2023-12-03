@@ -10,7 +10,7 @@ export const Peoples = () => {
   useEffect(() => dispatch(GET_PEOPLES()), []);
 
   return (
-    <div className="container">
+    <div className="container contentMovie">
       {peoples.map((people) => (
         <CardPeople key={people.id} people={people} />
       ))}

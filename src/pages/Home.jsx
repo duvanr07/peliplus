@@ -3,7 +3,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { GET_NOW_PLAYING, SEARCH_MOVIES } from "../redux/actions";
 import { ContentCardMovie } from "../components/ContentCardMovie";
 import { useForm } from "../hooks/useForm";
-import { Navbar } from "../components/Navbar";
 
 export const Home = () => {
   const dispatch = useDispatch();
@@ -14,15 +13,15 @@ export const Home = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    if (search.trim().length == 0) return;
+    if (search.trim().length === 0) return;
     dispatch(SEARCH_MOVIES({ query: search }));
   };
 
   return (
     <Fragment>
-      <div className="row">
+      <div className="row mt-3">
         <div className="col-8 offset-2">
-          <form action="" autoComplete="off" onSubmit={onSubmit}>
+          <form action="" autoComplete="off"  onSubmit={onSubmit}>
             <div className="input-group mb-3">
               <input
                 type="text"

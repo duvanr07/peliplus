@@ -10,7 +10,7 @@ export const Upcoming = () => {
   useEffect(() => dispatch(GET_UPCOMING()), []);
 
   return (
-    <div className="container">
+    <div className="container contentMovie">
       {movies.map((movie) => (
         <CardMovie key={movie.id} movie={movie} />
       ))}

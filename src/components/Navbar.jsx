@@ -1,23 +1,20 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 
 export const Navbar = () => {
   return (
     <>
-      <nav className="navbar navbar-expand-lg bg-warning m-3">
-        <div className="container-fluid">
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
+      <nav className="navbar navbar-expand-lg pt-2 bg-dark-subtle" aria-label="navbar">
+        <div className="container">
+          <Link to={"/"} className="navbar-brand">
+            <i className="bi bi-film mx-2"></i>
+            Películas Chigüirito
+          </Link>
+          <button className="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbars" aria-controls="navbars" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
-          <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+
+          <div className="collapse navbar-collapse" id="navbars">
             <div className="navbar-nav">
               <NavLink
                 className={({ isActive }) =>
@@ -34,7 +31,7 @@ export const Navbar = () => {
                 }
                 to="/now-playing"
               >
-                En cartelera hoy
+                En cartelera
               </NavLink>
               <NavLink
                 className={({ isActive }) =>

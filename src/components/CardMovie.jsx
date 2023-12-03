@@ -10,24 +10,17 @@ export const CardMovie = (props) => {
   const imgUrl = `https://image.tmdb.org/t/p/w300${poster_path}`;
 
   return (
-    <li className="cardMovie">
+    <div className="cardMovie">
       <Link to={"/movie/" + id} className="linkable">
         <img
-          width={230}
-          height={345}
           src={imgUrl}
           alt={title}
-          title={title}
           className="imgMovie"
         />
-        <div>
-
-          {/* <Link to={"/movie/" + id + "/videos"} className="linkable">
-            {title}
-          </Link> */}
-        </div>
+        <div>{title}</div>
       </Link>
-    </li>
+
+    </div>
   );
 };
 CardMovie.propTypes = { movie: PropTypes.any };
