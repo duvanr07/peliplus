@@ -1,6 +1,6 @@
-import { Fragment, useCallback, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { GET_NOW_PLAYING, SEARCH_MOVIES } from "../redux/actions";
+import { Fragment } from "react";
+import { useDispatch } from "react-redux";
+import { SEARCH_MOVIES } from "../redux/actions";
 import { ContentCardMovie } from "../components/ContentCardMovie";
 import { useForm } from "../hooks/useForm";
 

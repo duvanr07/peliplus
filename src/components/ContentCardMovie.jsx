@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { GET_DISCOVER, GET_NOW_PLAYING, GET_POPULAR } from "../redux/actions";
+import { GET_POPULAR } from "../redux/actions";
 import { CardMovie } from "./CardMovie";
 import "./ContentCardMovie.css";
 

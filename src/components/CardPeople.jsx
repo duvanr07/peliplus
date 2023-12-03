@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 export const CardPeople = ({people}) => {
 
-    const { id, profile_path, original_name, popularity } = people;
+    const { id, profile_path, original_name } = people;
     const imgUrl = `https://image.tmdb.org/t/p/w300${profile_path}`;
 
     return (

@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { GET_PEOPLES, GET_UPCOMING } from "../redux/actions";
+import { GET_PEOPLES } from "../redux/actions";
 import { CardPeople } from "../components/CardPeople";
 
 export const Peoples = () => {

@@ -1,12 +1,9 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {Link, useParams} from "react-router-dom";
-import "./DetailMovie.css";
-
 import { imgMovie } from "../utils/imgMovie";
 import {GET_CREDITS, GET_DETAIL, GET_KEYWORDS, GET_VIDEOS} from "../redux/actions";
-import {isEmpty} from "lodash";
-import {TrailerMovie} from "./TrailerMovie.jsx";
+import "./DetailMovie.css";
 
 export const DetailMovie = () => {
   const { idMovie } = useParams();
@@ -62,7 +59,7 @@ export const DetailMovie = () => {
 
           <div className="actorsMovie mt-4">
             {characters.map(({ profile_path, character }) => (
-                <div className="cardActors">
+                <div key={character} className="cardActors">
                   <img
                       src={'https://image.tmdb.org/t/p/w300' + profile_path}
                       alt=""
