@@ -6,7 +6,7 @@ import "./ContentCardMovie.css";
 
 export const ContentCardMovie = () => {
   const dispatch = useDispatch();
-  const movies = useSelector((state) => state.movies.popular);
+  const movies = useSelector((state) => state.movies.search);
   useEffect(() => dispatch(GET_POPULAR()), []);
 
   return (

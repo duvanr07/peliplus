@@ -26,7 +26,7 @@ const moviesReducer = (state = initialState, action) => {
     case `${MOVIES_TYPE.POPULAR}_FULFILLED`:
       return {
         ...state,
-        popular: action.payload.data.results,
+        search: action.payload.data.results,
       };
     case `${MOVIES_TYPE.UPCOMING}_FULFILLED`:
       return {
