@@ -8,6 +8,7 @@ const initialState = {
   popular: [],
   upcoming: [],
   peoples: [],
+  detailPeople: {},
 };
 
 const moviesReducer = (state = initialState, action) => {
@@ -44,6 +45,12 @@ const moviesReducer = (state = initialState, action) => {
       return {
         ...state,
         search: action.payload.data.results,
+      };
+
+    case `${MOVIES_TYPE.PEOPLE_DETAIL}_FULFILLED`:
+      return {
+        ...state,
+        detailPeople: action.payload.data,
       };
 
     default:

@@ -7,6 +7,7 @@ import { TrailerMovie } from "../pages/TrailerMovie";
 import { NowPlaying } from "../pages/NowPlaying";
 import { Upcoming } from "../pages/Upcoming";
 import { Peoples } from "../pages/Peoples";
+import { DetailPeople } from "../pages/DetailPeople";
 
 export const AppRouter = () => {
   return (
@@ -16,6 +17,7 @@ export const AppRouter = () => {
         <Route path="/now-playing" element={<NowPlaying />}></Route>
         <Route path="/upcoming" element={<Upcoming />}></Route>
         <Route path="/peoples" element={<Peoples />}></Route>
+        <Route path="/people/:id" element={<DetailPeople />}></Route>
         <Route exact path="/movie/:idMovie" element={<DetailMovie />} />
         <Route exact path="/movie/:idMovie/videos" element={<TrailerMovie />} />
       </Routes>

@@ -70,22 +70,27 @@ export const DetailMovie = () => {
         <h2 className="actorsTitle">Actores</h2>
 
         <div className="row">
-          {characters.map(({ profile_path, character, original_name, id }) => (
-            <div key={id} className="col-2">
-              <div className="card m-2">
-                <img
-                  src={"https://image.tmdb.org/t/p/w300" + profile_path}
-                  title={character}
-                  className="card-img-top"
-                />
+          {characters.map(
+            ({ profile_path, character, original_name, id }) =>
+              profile_path != null && (
+                <div key={id} className="col-2">
+                  <Link to={"/people/" + id} className="linkable">
+                    <div className="card m-2">
+                      <img
+                        src={"https://image.tmdb.org/t/p/w300" + profile_path}
+                        title={character}
+                        className="card-img-top"
+                      />
 
-                <div class="card-body">
-                  <h5 class="card-title">{character}</h5>
-                  <p class="card-text"> {original_name}</p>
+                      <div class="card-body">
+                        <h5 class="card-title">{character}</h5>
+                        <p class="card-text"> {original_name}</p>
+                      </div>
+                    </div>
+                  </Link>
                 </div>
-              </div>
-            </div>
-          ))}
+              )
+          )}
         </div>
       </div>
     </>

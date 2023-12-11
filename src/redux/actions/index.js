@@ -52,6 +52,13 @@ export const GET_PEOPLES = () => (dispatch) => {
   });
 };
 
+export const GET_PEOPLE_DETAIL = (params) => (dispatch) => {
+  dispatch({
+    type: MOVIES_TYPE.PEOPLE_DETAIL,
+    payload: request(config, OPTIONS_HTTP.GET, "peoples.detail",params),
+  });
+};
+
 export const GET_KEYWORDS = (params) => (dispatch) => {
   dispatch({
     type: MOVIES_TYPE.KEYWORDS,
